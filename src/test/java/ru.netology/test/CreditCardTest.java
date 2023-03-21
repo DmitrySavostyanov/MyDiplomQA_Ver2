@@ -184,7 +184,7 @@ public class CreditCardTest {
         creditCardPage.cardInfo(zeroCvc);
         creditCardPage.messInvalidCvc();
     }
-    @Test // Тест прошел локально, но не прошел при массовом запуске  - ВОПРОС
+    @Test // Тест прошел/
     @DisplayName("34. Покупка по кредитной карте с вводом 0 в поле Номер карты")
     void shouldErrorZeroCardNum() {
         val creditCardPage = dashboardPage.payByCreditCard();
