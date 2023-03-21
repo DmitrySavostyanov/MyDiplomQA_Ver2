@@ -176,7 +176,7 @@ public class CreditCardTest {
         creditCardPage.cardInfo(emptyCvc);
         creditCardPage.messEmptyCvcField();
     }
-    @Test // тест упал - - Форма не выдает сообщение об ошибке при вводе невалидных значений в поле CVC- Баг
+    @Test // тест упал - - Форма не выдает сообщение об ошибке при вводе 000 в поле CVC- Баг
     @DisplayName("32. Покупка по кредитной карте с вводом 000 в поле Cvc")
     void shouldErrorZeroCvc() {
         val creditCardPage = dashboardPage.payByCreditCard();

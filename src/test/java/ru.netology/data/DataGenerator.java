@@ -47,7 +47,7 @@ public class DataGenerator {
     }
 
     protected static String getInvalidCvc() {
-        return "23";
+        return "69";
     }
 
     protected static String getZeroCvc() {
