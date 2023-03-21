@@ -34,7 +34,7 @@ public class CreditCardTest {
         SqlHelper.cleanDataBase();
     }
 
-    @Test // Тест  упал/ нужно менять строку с БД//  -- это я завел как Баг
+    @Test //Тест - ок/ нужно менять строку с БД
     @DisplayName("2. Покупка по одобренной кредитной карте (Статус Approved)")
     void shouldPayByAppDC() {
         System.setProperty("url", "jdbc:postgresql://localhost:5432/app"); // url - ключ (имя переменной), "jdbc..../app"- значение переменной
@@ -48,7 +48,7 @@ public class CreditCardTest {
         assertEquals("APPROVED", paymentStatus);
     }
 
-    @Test // тест упал // Вопрос??? При ручном тесте - форма выдает ошибку- вопрос (не ясно пока что сломалось)
+    @Test // тест упал //Форма выдает сообщение об успешной оплате по дебитовой/кредитной карте со статусом Declined -Баг
     @DisplayName("4. Покупка по отклоненной кредитной карте (Статус Declined)")
     void shouldPayNotByDecDC() {
         val creditCardPage = dashboardPage.payByCreditCard();
@@ -104,7 +104,7 @@ public class CreditCardTest {
         creditCardPage.messExpiredYearField();
     }
 
-    @Test // тест упал ---- / Вопрос ???
+    @Test // тест упал ---- /Форма не выдает ошибку при вводе невалидных значений в поле Владелец - Баг
     @DisplayName("16. Покупка по кредитной карте с указанием невалидных значений в поле Владелец")
     void shouldErrorInvalidOwner() {
         val creditCardPage = dashboardPage.payByCreditCard();;
