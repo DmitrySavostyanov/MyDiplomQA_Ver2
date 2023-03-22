@@ -15,22 +15,17 @@
 **PostgreSQL:**
  - успешных - 16 (84,21%)
  - неуспешных - 6 (15,79%)
-  
-  ![postgress](https://photos.google.com/u/0/share/AF1QipMouMvTA-J_Z6I43afbyb7r1Gfb0jrvJAJKVdlRPs4NHEgpZzloPNDA4JhpT0BZgw/photo/AF1QipMYvNzpSow-LwDR43Fy7kTH7Ta1mMousaZpVdS7?key=di1jbWduazZCZnhjS2hBaTlmT1EyQ0JaSllQRWNB&hl=ru)
-    ![postgress](https://photos.google.com/u/0/share/AF1QipMouMvTA-J_Z6I43afbyb7r1Gfb0jrvJAJKVdlRPs4NHEgpZzloPNDA4JhpT0BZgw/photo/AF1QipNNzCVklyAFtU5Srl-TiSvBGVE8LVtk6GxXRT_T?key=di1jbWduazZCZnhjS2hBaTlmT1EyQ0JaSllQRWNB&hl=ru)
-  
-  
-  
+   
+    ![Allure PostgreSQL](https://user-images.githubusercontent.com/110735452/226965931-3108dd4c-8c09-4c5c-a9c0-6b352061a0b3.png)
+    ![Allure_PostgreSQL](https://user-images.githubusercontent.com/110735452/226966056-32c5956a-5440-4025-a780-a1669e6c838f.png)
+
 **MySQL:**
  - успешных - 16 (84,21%)
  - неуспешных - 6 (15,79%)
   
-   ![mySQL](https://photos.google.com/u/0/share/AF1QipMouMvTA-J_Z6I43afbyb7r1Gfb0jrvJAJKVdlRPs4NHEgpZzloPNDA4JhpT0BZgw/photo/AF1QipMr5xjDpkoQlWN-c32RCYiwoIMpGzSZo5sSvqEe?key=di1jbWduazZCZnhjS2hBaTlmT1EyQ0JaSllQRWNB&hl=ru)
-    ![mySQL](https://photos.google.com/u/0/share/AF1QipMouMvTA-J_Z6I43afbyb7r1Gfb0jrvJAJKVdlRPs4NHEgpZzloPNDA4JhpT0BZgw/photo/AF1QipPbpXJl0XuOCKv-oAXJuZbc2X4MKaqKE4j1WPpc?key=di1jbWduazZCZnhjS2hBaTlmT1EyQ0JaSllQRWNB&hl=ru)
-  
-  
+![Allure MySQL](https://user-images.githubusercontent.com/110735452/226966236-65db1453-b8fc-49d6-9f9c-0ee0a298f2e9.png)
 
-  
+![Allure  MySQL](https://user-images.githubusercontent.com/110735452/226966265-431e837a-0dba-421c-a9d4-69ed349d14dd.png)
   
 ## Дефекты, обнаруженные во время тестирования
 
