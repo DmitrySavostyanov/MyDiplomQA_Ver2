@@ -16,8 +16,8 @@
  - успешных - 16 (84,21%)
  - неуспешных - 6 (15,79%)
    
-    ![Allure PostgreSQL](https://user-images.githubusercontent.com/110735452/226965931-3108dd4c-8c09-4c5c-a9c0-6b352061a0b3.png)
-    ![Allure_PostgreSQL](https://user-images.githubusercontent.com/110735452/226966056-32c5956a-5440-4025-a780-a1669e6c838f.png)
+ ![Allure PostgreSQL](https://user-images.githubusercontent.com/110735452/226965931-3108dd4c-8c09-4c5c-a9c0-6b352061a0b3.png)
+ ![Allure_PostgreSQL](https://user-images.githubusercontent.com/110735452/226966056-32c5956a-5440-4025-a780-a1669e6c838f.png)
 
 **MySQL:**
  - успешных - 16 (84,21%)
