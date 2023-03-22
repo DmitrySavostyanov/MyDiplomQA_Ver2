@@ -57,7 +57,6 @@ public class DebitCardPage {
         fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
     }
     public void messZeroNum() {
-        // fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);// нотификация - нули в поле ввода номер карты Дебет
         try {
             Thread.sleep(15000);
         } catch (InterruptedException e) {
@@ -83,17 +82,14 @@ public class DebitCardPage {
     }
 
     public void messEmptyCardNumberField() {
-        //  fieldNumberError.shouldHave(text("Поле обязательно для заполнения")); fieldNumberError.shouldBe(visible);
         fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
     }
 
     public void messEmptyMonthField() {
-        // fieldMonthError.shouldHave(text("Поле обязательно для заполнения")); fieldMonthError.shouldBe(visible);
         fieldMonthError.shouldHave(text("Неверный формат")); fieldMonthError.shouldBe(visible);
     }
 
     public void messEmptyYearField() {
-        // fieldYearError.shouldHave(text("Поле обязательно для заполнения")); fieldYearError.shouldBe(visible);
         fieldYearError.shouldHave(text("Неверный формат")); fieldYearError.shouldBe(visible);
     }
 
@@ -102,7 +98,6 @@ public class DebitCardPage {
     }
 
     public void messEmptyCvcField() {
-        //fieldCvcError.shouldHave(text("Поле обязательно для заполнения")); fieldCvcError.shouldBe(visible);
         fieldCvcError.shouldHave(text("Неверный формат")); fieldCvcError.shouldBe(visible);
     }
 

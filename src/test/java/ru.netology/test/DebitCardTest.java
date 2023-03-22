@@ -36,7 +36,7 @@ public class DebitCardTest {
     @Test // Тест - ок/ нужно менять строку с БД
     @DisplayName("1. Покупка по одобренной дебетовой карте (Статус Approved)")
     void shouldPayByAppDC() {
-        System.setProperty("url", "jdbc:postgresql://localhost:5432/app"); // url - ключ (назв переменной), значение переменной (jdbc)
+        System.setProperty("url", "jdbc:postgresql://localhost:5432/app");
         //System.setProperty("url", "jdbc:mysql://localhost:3306/app");
         val debitCardPage = dashboardPage.payByDebitCard();
         val approvedCardInformation = DataHelper.getApprovedCardInfo();
