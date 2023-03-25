@@ -37,7 +37,7 @@ public class DebitCardTest {
     @DisplayName("1. Покупка по одобренной дебетовой карте (Статус Approved)")
     void shouldPayByAppDC() {
         //System.setProperty("url", "jdbc:postgresql://localhost:5432/app");
-         System.setProperty("url", "jdbc:mysql://localhost:3306/app");
+        //System.setProperty("url", "jdbc:mysql://localhost:3306/app");
         val debitCardPage = dashboardPage.payByDebitCard();
         val approvedCardInformation = DataHelper.getApprovedCardInfo();
         debitCardPage.cardInfo(approvedCardInformation);
@@ -182,7 +182,7 @@ public class DebitCardTest {
         debitCardPage.cardInfo(zeroCvc);
         debitCardPage.messInvalidCvc();
     }
-    @Test //тест прошел -Ок -- нотификацию поправил//
+    @Test //тест прошел -Ок/
     @DisplayName("33. Покупка по дебетовой карте с вводом 0 в поле Номер карты")
     void shouldErrorZeroCardNum() {
         val debitCardPage = dashboardPage.payByDebitCard();

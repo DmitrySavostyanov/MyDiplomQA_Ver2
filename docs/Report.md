@@ -40,6 +40,7 @@
  - Java 11
  - GitHub
  - Docker Desktop
+ - DBeaver
  - Selenide
  - Gradle
  - Junit 5
