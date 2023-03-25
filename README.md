@@ -41,5 +41,5 @@ http://localhost:8080/
 - [Отчет по итогам 
 автоматизации](https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/main/docs/Summary.md)
 
-## Демонстрация
+## Демонстрация:
 [Демонстрация](https://youtu.be/jU4MyfcCono)
