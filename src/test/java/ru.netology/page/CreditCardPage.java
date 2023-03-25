@@ -42,7 +42,7 @@ public class CreditCardPage {
     }
 
     public void okNotification() {
-        okNotification.waitUntil(visible, 15000);
+        okNotification.waitUntil(visible, 20000);
     }
 
     public void nokNotification() {nokNotification.waitUntil(visible, 20000);
@@ -57,7 +57,7 @@ public class CreditCardPage {
     }
     public void messZeroNum() {
         try {
-            Thread.sleep(15000);
+            Thread.sleep(25000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

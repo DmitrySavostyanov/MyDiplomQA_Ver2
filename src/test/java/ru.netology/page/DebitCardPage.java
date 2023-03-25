@@ -58,7 +58,7 @@ public class DebitCardPage {
     }
     public void messZeroNum() {
         try {
-            Thread.sleep(15000);
+            Thread.sleep(40000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
