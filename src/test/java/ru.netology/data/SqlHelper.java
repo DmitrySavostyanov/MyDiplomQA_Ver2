@@ -42,7 +42,7 @@ public class SqlHelper {
     }
 
     @SneakyThrows
-    public static String getPaymentEntity() {
+    public static String getPaymentEntity() { //getPaymentStatus ///JDBC VS Hibernate
         try (val conn = getConn();
              val countStmt = conn.createStatement()) {
             val paymentStatus = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1;";// сортировака по полю создания и огранченная (лимит) одной записью

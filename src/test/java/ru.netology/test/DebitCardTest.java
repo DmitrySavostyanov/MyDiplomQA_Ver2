@@ -31,18 +31,19 @@ public class DebitCardTest {
     static void tearDownAll() {
         SelenideLogger.removeListener("allure");
         SqlHelper.cleanDataBase();
-    }
+   }
 
     @Test // Тест - ок/ нужно менять строку с БД
     @DisplayName("1. Покупка по одобренной дебетовой карте (Статус Approved)")
     void shouldPayByAppDC() {
-        System.setProperty("url", "jdbc:postgresql://localhost:5432/app"); // url - ключ (назв переменной), значение переменной (jdbc)
+        //System.setProperty("url", "jdbc:postgresql://localhost:5432/app"); // url - ключ (назв переменной), значение переменной (jdbc)
+        //System.getProperty("url"); // url - ключ (назв переменной), значение переменной (jdbc)
         //System.setProperty("url", "jdbc:mysql://localhost:3306/app");
         val debitCardPage = dashboardPage.payByDebitCard();
         val approvedCardInformation = DataHelper.getApprovedCardInfo();
         debitCardPage.cardInfo(approvedCardInformation);
         debitCardPage.okNotification();
-        val paymentStatus = SqlHelper.getPaymentEntity();
+        val paymentStatus = SqlHelper.getPaymentEntity();//
         assertEquals("APPROVED", paymentStatus);
     }
 
