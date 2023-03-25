@@ -20,7 +20,11 @@ http://localhost:8080/
 
 * для БД MySQL: ./gradlew clean test "-Durl=jdbc:mysql://localhost:3306/app"
 * для БД Postgres: ./gradlew clean test "-Durl=jdbc:postgresql://localhost:5432/app"
-Запуск репортинга (Allure):
+
+* Запуск локально (одного) теста (пример для БД MySQL): ./gradlew clean test --tests CreditCardTest.shouldPayByAppDC "-Durl=jdbc:mysql://localhost:3306/app"
+
+
+## Запуск репортинга (Allure):
 По команде в терминале IDE: ./gradlew allureServe
 
 ## Завершение работы:
