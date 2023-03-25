@@ -42,4 +42,4 @@ http://localhost:8080/
 автоматизации](https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/main/docs/Summary.md)
 
 ## Демонстрация
-https://youtu.be/jU4MyfcCono
+[Демонстрация](https://youtu.be/jU4MyfcCono)
