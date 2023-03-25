@@ -34,4 +34,4 @@ http://localhost:8080/
 По команде в термнале IDE: docker-compose down
 
 ## Документация:
-[План автоматизации]: (https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/main/docs/Plan.md)
+[План автоматизации[] План автоматизации]: (https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/main/docs/Plan.md)
