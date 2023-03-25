@@ -40,3 +40,6 @@ http://localhost:8080/
 тестирования](https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/main/docs/Report.md)
 - [Отчет по итогам 
 автоматизации](https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/main/docs/Summary.md)
+
+## Демонстрация:
+[Видео демонстрация запуска тестов](https://youtu.be/jU4MyfcCono)
