@@ -42,7 +42,7 @@ public class DebitCardTest {
 
     }
 
-    @Test // Тест - ок/ нужно менять строку с БД
+    @Test // Тест - ок/
     @DisplayName("1. Покупка по одобренной дебетовой карте (Статус Approved)")
     void shouldPayByAppDC() {
         DebitCardPage debitCardPage = dashboardPage.payByDebitCard();
