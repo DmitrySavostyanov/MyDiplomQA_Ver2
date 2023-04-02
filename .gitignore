@@ -3,6 +3,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+gate-simulator/node_modules/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -15,6 +16,7 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.idea
 
 ### Eclipse ###
 .apt_generated

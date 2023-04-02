@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1208c376-4964-40d5-9a6a-0e5234876d45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/cards/DebitCardEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/cards/DebitCardEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/data/SqlHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/data/SqlHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/pages/CreditCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/pages/CreditCardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/pages/DebitCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/pages/DebitCardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/test/CreditCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/test/CreditCardTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="1208c376-4964-40d5-9a6a-0e5234876d45" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
