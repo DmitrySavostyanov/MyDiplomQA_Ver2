@@ -8,9 +8,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class DataGenerator {
-    LocalDate today = LocalDate.now();
-    DateTimeFormatter monthFormatter = DateTimeFormatter.ofPattern("MM");
-    DateTimeFormatter yearFormatter = DateTimeFormatter.ofPattern("yy");
+
+
+    private static LocalDate today = LocalDate.now();
+    private static DateTimeFormatter monthFormatter = DateTimeFormatter.ofPattern("MM");
+    private static DateTimeFormatter yearFormatter = DateTimeFormatter.ofPattern("yy");
+
 
     protected static String getApprovedCardNumber() {
         return "4444 4444 4444 4441";
@@ -54,52 +57,42 @@ public class DataGenerator {
         return "000";
     }
 
-    @Value
-    protected static class Year {
-        String year;
-    }
-
-    protected Year getCurrentYear() {
+    protected static String getCurrentYear() { // new pravka v string
         LocalDate currentYear = LocalDate.now();
-        return new Year(yearFormatter.format(currentYear));
+        return yearFormatter.format(currentYear);
     }
 
-    protected Year getValidExpirationDate() {// действительный срок действия карты
+    protected static String getValidExpirationDate() {// действительный срок действия карты
         LocalDate newYear = today.plusYears(1);
-        return new Year(yearFormatter.format(newYear));
+        return yearFormatter.format(newYear);
     }
 
-    protected Year getExpiredYear() { //получить просроченный год
+    protected static String getExpiredYear() { //получить просроченный год
         LocalDate newYear = today.minusYears(1);
-        return new Year(yearFormatter.format(newYear));
+        return yearFormatter.format(newYear);
     }
 
 
-    protected Year getZeroYear() {
-        return new Year("00");
+    protected static String getZeroYear() {
+        return "00";
     }
 
-    @Value
-    protected static class Month {
-        String month;
-    }
-
-    protected Month getValidMonth() {
+    protected static String  getValidMonth() {
         LocalDate newMonth = today.plusMonths(1);
-        return new Month(monthFormatter.format(newMonth));
+        return monthFormatter.format(newMonth);
     }
 
-    protected Month getExpiredMonth() {
+    protected static String  getExpiredMonth() {
         LocalDate newMonth = today.minusMonths(1);
-        return new Month(monthFormatter.format(newMonth));
+        return monthFormatter.format(newMonth);
     }
 
-    protected Month getInvalidMonth() {
-        return new Month("13");
+    protected static String  getInvalidMonth() {
+        return "13";
     }
 
-    protected Month getZeroMonth() {
-        return new Month("00");
+    protected static String  getZeroMonth() {
+        return "00";
     }
 
 

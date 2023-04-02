@@ -1,8 +1,12 @@
-package ru.netology.page;
+package ru.netology.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.commands.ShouldBe;
 import ru.netology.data.DataHelper;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Condition.visible;
@@ -11,28 +15,27 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class CreditCardPage {
+public class DebitCardPage {
 
-    private final SelenideElement payByCredit = $$("h3").find(text("Кредит по данным карты"));
+
+    private final SelenideElement payByCard = $$("h3").find(text("Оплата по карте"));
     private SelenideElement fieldNumber = $("[placeholder='0000 0000 0000 0000']");
     private SelenideElement fieldMonth = $("[placeholder='08']");
     private SelenideElement fieldYear = $("[placeholder='22']");
-    private SelenideElement fieldOwner = $(byText("Владелец")).parent().$(".input__control");
-    //public SelenideElement fieldOwner2 = $(byText("Владелец")).parent();// копия///////////////////////
-    //public SelenideElement fieldOwner3 = $(byText("Владелец"));// копия///////////////////////
+    private SelenideElement fieldOwner = $(byText("Владелец")).parent().$(".input__control");;
     private SelenideElement fieldCVC = $("[placeholder='999']");
     private SelenideElement continueButton = $$(".button").find(exactText("Продолжить"));
 
     private SelenideElement okNotification = $(withText("Успешно"));
     private SelenideElement nokNotification = $(withText("Ошибка"));
+
     private SelenideElement fieldNumberError = Selenide.$x("//span[text()='Номер карты']" + "/following-sibling::span[@class='input__sub']");
     private SelenideElement fieldMonthError = Selenide.$x("//span[text()='Месяц']" + "/following-sibling::span[@class='input__sub']");
     private SelenideElement fieldYearError = Selenide.$x("//span[text()='Год']" + "/following-sibling::span[@class='input__sub']");
     private SelenideElement fieldOwnerError = Selenide.$x("//span[text()='Владелец']" + "/following-sibling::span[@class='input__sub']");
     private SelenideElement fieldCvcError = Selenide.$x("//span[text()='CVC/CVV']" + "/following-sibling::span[@class='input__sub']");
-
-    public CreditCardPage() {
-        payByCredit.shouldBe(visible);
+    public DebitCardPage() {
+        payByCard.shouldBe(visible);
     }
     public void cardInfo(DataHelper.CardInfo cardInfo) {
         fieldNumber.setValue(cardInfo.getCardNumber());
@@ -43,29 +46,31 @@ public class CreditCardPage {
         continueButton.click();
     }
 
-    public void okNotification() {
-        okNotification.waitUntil(visible, 15000);
+    //public void okNotification() {okNotification.waitUntil(visible, 50000);} //было
+    public void okNotification() {okNotification.should(visible, Duration.ofSeconds(50)); // new
     }
 
-    public void nokNotification() {nokNotification.waitUntil(visible, 20000);
+    //public void nokNotification() {nokNotification.waitUntil(visible, 20000);}
+    public void nokNotification() {nokNotification.should(visible, Duration.ofSeconds(15)); // new
     }
 
-    public void messInvalidCardNumber() {
-        nokNotification.waitUntil(visible, 20000);
+    //public void messInvalidCardNumber() {nokNotification.waitUntil(visible, 20000);}
+    public void messInvalidCardNumber() {nokNotification.should(visible, Duration.ofSeconds(15)); // new
     }
-
     public void messErrorNum() {
         fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
     }
     public void messZeroNum() {
-        try {
-            Thread.sleep(15000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            nokNotification.should(visible, Duration.ofSeconds(15)); // отлмчие should / shouldBe
         }
-//     fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
-        nokNotification.shouldBe(visible);
-    }
+//        // fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);// нотификация - нули в поле ввода номер карты Дебет
+//        try {
+//            Thread.sleep(15000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        nokNotification.shouldBe(visible);
+//    }
 
     public void messInvalidMonth() {
         fieldMonthError.shouldHave(text("Неверно указан срок действия карты")); fieldMonthError.shouldBe(visible);
@@ -84,14 +89,13 @@ public class CreditCardPage {
     }
 
     public void messEmptyCardNumberField() {
-        //fieldNumberError.shouldHave(text("Поле обязательно для заполнения")); fieldNumberError.shouldBe(visible);
+        //  fieldNumberError.shouldHave(text("Поле обязательно для заполнения")); fieldNumberError.shouldBe(visible);
         fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
     }
 
     public void messEmptyMonthField() {
-        //fieldMonthError.shouldHave(text("Поле обязательно для заполнения")); fieldMonthError.shouldBe(visible);
+        // fieldMonthError.shouldHave(text("Поле обязательно для заполнения")); fieldMonthError.shouldBe(visible);
         fieldMonthError.shouldHave(text("Неверный формат")); fieldMonthError.shouldBe(visible);
-
     }
 
     public void messEmptyYearField() {
@@ -104,7 +108,7 @@ public class CreditCardPage {
     }
 
     public void messEmptyCvcField() {
-        // fieldCvcError.shouldHave(text("Поле обязательно для заполнения")); fieldCvcError.shouldBe(visible);
+        //fieldCvcError.shouldHave(text("Поле обязательно для заполнения")); fieldCvcError.shouldBe(visible);
         fieldCvcError.shouldHave(text("Неверный формат")); fieldCvcError.shouldBe(visible);
     }
 
@@ -115,6 +119,4 @@ public class CreditCardPage {
     public void messExpiredMonth() {
         fieldMonthError.shouldHave(text("Неверно указан срок действия карты")); fieldMonthError.shouldBe(visible);
     }
-
-
 }
