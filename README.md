@@ -18,13 +18,14 @@ http://localhost:8080/
 ## Запуск тестов:
 По команде через терминал IDE:
 
-* для БД MySQL: ./gradlew clean test "-Durl=jdbc:mysql://localhost:3306/app"
-* для БД Postgres: ./gradlew clean test "-Durl=jdbc:postgresql://localhost:5432/app"
+* для БД MySQL: ./gradlew clean test -Durl="jdbc:mysql://localhost:3306/app"
+* для БД Postgres: ./gradlew clean test -Durl="jdbc:mysql://localhost:5432/app"
+
 Запуск репортинга (Allure):
 По команде в терминале IDE: ./gradlew allureServe
 
 ## Завершение работы:
-После окончания тестов по команде в термнале IDE: Ctrl+C
+После окончания тестов по команде в термнале IDE: control+C (MacOS)
 
 ## Остановка контейнеров:
 По команде в термнале IDE: docker-compose down

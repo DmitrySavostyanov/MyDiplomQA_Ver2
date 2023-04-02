@@ -206,7 +206,7 @@ public class DebitCardTest {
         debitCardPage.cardInfo(emptyCvc);
         debitCardPage.messEmptyCvcField();
     }
-   // @Test // тест упал - Форма не выдает сообщение об ошибке при вводе 000 в поле CVC- Баг
+    @Test // тест упал - Форма не выдает сообщение об ошибке при вводе 000 в поле CVC- Баг
     @DisplayName("31. Покупка по дебетовой карте с вводом 000 в поле Cvc")
     void shouldErrorZeroCvc() {
         DebitCardPage debitCardPage = dashboardPage.payByDebitCard();
