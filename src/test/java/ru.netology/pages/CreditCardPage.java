@@ -45,15 +45,12 @@ public class CreditCardPage {
         continueButton.click();
     }
 
-    //public void okNotification() {okNotification.waitUntil(visible, 50000);} //было
     public void okNotification() {okNotification.should(visible, Duration.ofSeconds(15)); // new
     }
 
-    //public void nokNotification() {nokNotification.waitUntil(visible, 20000);}
     public void nokNotification() {nokNotification.should(visible, Duration.ofSeconds(15)); // new
     }
 
-    //public void messInvalidCardNumber() {nokNotification.waitUntil(visible, 20000);}
     public void messInvalidCardNumber() {nokNotification.should(visible, Duration.ofSeconds(15)); // new
     }
 
@@ -63,14 +60,6 @@ public class CreditCardPage {
     public void messZeroNum() {
         nokNotification.should(visible, Duration.ofSeconds(15)); // отлмчие should / shouldBe
     }
-
-//        try {
-//            Thread.sleep(15000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-////     fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
-//        nokNotification.shouldBe(visible);}
 
     public void messInvalidMonth() {
         fieldMonthError.shouldHave(text("Неверно указан срок действия карты")); fieldMonthError.shouldBe(visible);
@@ -89,18 +78,15 @@ public class CreditCardPage {
     }
 
     public void messEmptyCardNumberField() {
-        //fieldNumberError.shouldHave(text("Поле обязательно для заполнения")); fieldNumberError.shouldBe(visible);
         fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
     }
 
     public void messEmptyMonthField() {
-        //fieldMonthError.shouldHave(text("Поле обязательно для заполнения")); fieldMonthError.shouldBe(visible);
         fieldMonthError.shouldHave(text("Неверный формат")); fieldMonthError.shouldBe(visible);
 
     }
 
     public void messEmptyYearField() {
-        // fieldYearError.shouldHave(text("Поле обязательно для заполнения")); fieldYearError.shouldBe(visible);
         fieldYearError.shouldHave(text("Неверный формат")); fieldYearError.shouldBe(visible);
     }
 
@@ -109,7 +95,6 @@ public class CreditCardPage {
     }
 
     public void messEmptyCvcField() {
-        // fieldCvcError.shouldHave(text("Поле обязательно для заполнения")); fieldCvcError.shouldBe(visible);
         fieldCvcError.shouldHave(text("Неверный формат")); fieldCvcError.shouldBe(visible);
     }
 

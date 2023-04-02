@@ -16,7 +16,5 @@ public class DebitCardEntity {
     private String transaction_id;
 }
 
-//Task  - обратиться к БД со ко всем полям (*) забрать одну строку и каждую строку по отдельности распечатать!!!
-//TODO: //напоминанме
 
 

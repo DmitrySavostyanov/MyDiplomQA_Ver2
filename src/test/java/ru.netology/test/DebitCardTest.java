@@ -26,7 +26,7 @@ public class DebitCardTest {
         //System.setProperty("url", "jdbc:mysql://localhost:3306/app");
 
     }
-    @AfterEach //после
+    @AfterEach
     void afterEach(){
         SqlHelper.cleanDataBase();
     }
@@ -36,38 +36,31 @@ public class DebitCardTest {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
-    @AfterAll //после всех тестов // бефор ич после каждого
+    @AfterAll
     static void tearDownAll() {
         SelenideLogger.removeListener("allure");
-         //SqlHelper.cleanDataBase();
+
     }
 
     @Test // Тест - ок/ нужно менять строку с БД
     @DisplayName("1. Покупка по одобренной дебетовой карте (Статус Approved)")
     void shouldPayByAppDC() {
-        //System.setProperty("url", "jdbc:postgresql://localhost:5432/app"); // url - ключ (назв переменной), значение переменной (jdbc)
-        //System.getProperty("url"); // url - ключ (назв переменной), значение переменной (jdbc)
-        //System.setProperty("url", "jdbc:mysql://localhost:3306/app");
         DebitCardPage debitCardPage = dashboardPage.payByDebitCard();
         DataHelper.CardInfo approvedCardInformation = DataHelper.getApprovedCardInfo();
         debitCardPage.cardInfo(approvedCardInformation);
         debitCardPage.okNotification();
-//        val paymentStatus = SqlHelper.getPaymentEntity();//
-//        assertEquals("APPROVED", paymentStatus);
         assertEquals("APPROVED", getEntryFromPaymentEntity().getStatus());
         assertNotEquals("", getEntryFromOrderEntity().getId());
 
     }
 
-   // @Test //Форма выдает сообщение об успешной оплате по дебитовой/кредитной карте со статусом Declined -Баг
+   @Test //Форма выдает сообщение об успешной оплате по дебитовой/кредитной карте со статусом Declined -Баг
     @DisplayName("3. Покупка по отклоненной дебетовой карте (Статус Declined)")
     void shouldPayNotByDecDC() {
         DebitCardPage debitCardPage = dashboardPage.payByDebitCard();
         DataHelper.CardInfo declinedCardInformation = DataHelper.getDeclinedCardInfo();
         debitCardPage.cardInfo(declinedCardInformation);
         debitCardPage.nokNotification();
-//        val paymentStatus = SqlHelper.getPaymentEntity();
-//        assertEquals("DECLINED", paymentStatus);
         assertEquals("DECLINED", getEntryFromPaymentEntity().getStatus());
         assertNotEquals("", getEntryFromOrderEntity().getId());
 
@@ -129,7 +122,7 @@ public class DebitCardTest {
         checkEmptyOrderEntity();
     }
 
-    //@Test // тест упал!!! //Форма не выдает ошибку при вводе невалидных значений в поле Владелец - Баг
+    @Test // тест упал!!! //Форма не выдает ошибку при вводе невалидных значений в поле Владелец - Баг
     @DisplayName("15. Покупка по дебетовой карте с указанием невалидных значений в поле Владелец")
     void shouldErrorInvalidOwner() {
         DebitCardPage debitCardPage = dashboardPage.payByDebitCard();

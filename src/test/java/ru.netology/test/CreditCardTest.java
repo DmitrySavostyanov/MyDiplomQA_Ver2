@@ -3,7 +3,6 @@ package ru.netology.test;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import lombok.val;
 import org.junit.jupiter.api.*;
 import ru.netology.data.DataHelper;
 import ru.netology.data.SqlHelper;
@@ -24,7 +23,8 @@ public class CreditCardTest {
         open(System.getProperty("sut.url"));
         Selenide.clearBrowserCookies();
         Selenide.clearBrowserLocalStorage();
-        System.setProperty("url", "jdbc:mysql://localhost:3306/app");
+        //System.setProperty("url", "jdbc:mysql://localhost:3306/app");
+
     }
 
     @AfterEach //после
@@ -40,21 +40,7 @@ public class CreditCardTest {
     @AfterAll
     static void tearDownAll() {
         SelenideLogger.removeListener("allure");
-        //SqlHelper.cleanDataBase();
     }
-
-//    @Test //Тест - ок/ нужно менять строку с БД
-//    @DisplayName("2. Покупка по одобренной кредитной карте (Статус Approved)")
-//    void shouldPayByAppDC() {
-//        // System.setProperty("url", "jdbc:postgresql://localhost:5432/app"); // url - ключ (имя переменной), "jdbc..../app"- значение переменной
-//        //System.setProperty("url", "jdbc:mysql://localhost:3306/app");
-//        val creditCardPage = dashboardPage.payByCreditCard();
-//        val approvedCardInformation = DataHelper.getApprovedCardInfo();
-//        //System.out.println(approvedCardInformation.);
-//        creditCardPage.cardInfo(approvedCardInformation);
-//        creditCardPage.okNotification();
-//        val paymentStatus = SqlHelper.getCreditEntity();
-//        assertEquals("APPROVED", paymentStatus);}
 
     @Test //Тест - ок/ нужно менять строку с БД
     @DisplayName("2. Покупка по одобренной кредитной карте (Статус Approved)")
@@ -63,45 +49,25 @@ public class CreditCardTest {
         DataHelper.CardInfo approvedCardInformation = DataHelper.getApprovedCardInfo();
         creditCardPage.cardInfo(approvedCardInformation);
         creditCardPage.okNotification();
-        //String paymentStatus = SqlHelper.getCreditEntity();
-        //assertEquals("APPROVED", paymentStatus);
         assertEquals("APPROVED", getEntryFromCreditRequestEntity().getStatus());
         assertNotEquals("", getEntryFromOrderEntity().getId());
     }
 
-   // @Test // тест упал //Форма выдает сообщение об успешной оплате по дебитовой/кредитной карте со статусом Declined -Баг
+    @Test // тест упал //Форма выдает сообщение об успешной оплате по дебитовой/кредитной карте со статусом Declined -Баг
     @DisplayName("4. Покупка по отклоненной кредитной карте (Статус Declined)")
     void shouldPayNotByDecDC() {
         CreditCardPage creditCardPage = dashboardPage.payByCreditCard();
         DataHelper.CardInfo declinedCardInformation = DataHelper.getDeclinedCardInfo();
         creditCardPage.cardInfo(declinedCardInformation);
         creditCardPage.nokNotification();
-
-//        val paymentStatus = SqlHelper.getCreditEntity();
-//        assertEquals("DECLINED", paymentStatus);
         assertEquals("DECLINED", getEntryFromCreditRequestEntity().getStatus());
         assertNotEquals("", getEntryFromOrderEntity().getId());
 
     }
 
-//    @Test /// после запуска
-//    void test(){
-//        System.setProperty("url", "jdbc:mysql://localhost:3306/app");
-//        checkEmptyPaymentEntity();
-//    }
-
-//    @Test // Тест прошел -Ок
-//    @DisplayName("6. Покупка по кредитной карте с невалидным номером")
-//    void shouldNotPayByInvNum() {
-//        val creditCardPage = dashboardPage.payByCreditCard();
-//        val invalidCardInformation = DataHelper.getInvalidCardInfo();
-//        creditCardPage.cardInfo(invalidCardInformation);
-//        creditCardPage.messInvalidCardNumber();
-//    }
     @Test // Тест прошел -Ок
     @DisplayName("6. Покупка по кредитной карте с невалидным номером")
     void shouldNotPayByInvNum() {
-        //System.setProperty("url", "jdbc:mysql://localhost:3306/app");
         CreditCardPage creditCardPage = dashboardPage.payByCreditCard();
         DataHelper.CardInfo invalidCardInformation = DataHelper.getInvalidCardInfo();
         creditCardPage.cardInfo(invalidCardInformation);
@@ -146,7 +112,6 @@ public class CreditCardTest {
     @Test // Тест прошел -Ок
     @DisplayName("14. Покупка по кредитной карте с указанием истекшего года")
     void shouldErrorExpiredYear() {
-       // System.setProperty("url", "jdbc:mysql://localhost:3306/app");
         CreditCardPage creditCardPage = dashboardPage.payByCreditCard();
         DataHelper.CardInfo expiredYearCardInformation = DataHelper.getExpiredYearCardInfo();
         creditCardPage.cardInfo(expiredYearCardInformation);
@@ -155,16 +120,15 @@ public class CreditCardTest {
         checkEmptyOrderEntity();
     }
 
-    //@Test // тест упал ---- /Форма не выдает ошибку при вводе невалидных значений в поле Владелец - Баг
+    @Test // тест упал ---- /Форма не выдает ошибку при вводе невалидных значений в поле Владелец - Баг
     @DisplayName("16. Покупка по кредитной карте с указанием невалидных значений в поле Владелец")
     void shouldErrorInvalidOwner() {
-        //System.setProperty("url", "jdbc:mysql://localhost:3306/app");
         CreditCardPage creditCardPage = dashboardPage.payByCreditCard();;
         DataHelper.CardInfo invalidOwner = DataHelper.getInvalidOwnerCard();
         creditCardPage.cardInfo(invalidOwner);
         creditCardPage.messInvalidOwner();
-        //checkEmptyCreditRequestEntity();
-        //checkEmptyOrderEntity();
+        checkEmptyCreditRequestEntity();
+        checkEmptyOrderEntity();
     }
 
     @Test // Тест прошел -Ок
@@ -244,7 +208,7 @@ public class CreditCardTest {
         checkEmptyCreditRequestEntity();
         checkEmptyOrderEntity();
     }
-    //@Test // тест упал - - Форма не выдает сообщение об ошибке при вводе 000 в поле CVC- Баг
+    @Test // тест упал - - Форма не выдает сообщение об ошибке при вводе 000 в поле CVC- Баг
     @DisplayName("32. Покупка по кредитной карте с вводом 000 в поле Cvc")
     void shouldErrorZeroCvc() {
         CreditCardPage creditCardPage = dashboardPage.payByCreditCard();
