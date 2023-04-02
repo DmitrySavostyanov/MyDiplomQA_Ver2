@@ -4,6 +4,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 gate-simulator/node_modules/
+.allure/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
