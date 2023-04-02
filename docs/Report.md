@@ -16,16 +16,19 @@
  - успешных - 32 (84,21%)
  - неуспешных - 6 (15,79%)
    
- ![Allure PostgreSQL](https://user-images.githubusercontent.com/110735452/226965931-3108dd4c-8c09-4c5c-a9c0-6b352061a0b3.png)
- ![Allure_PostgreSQL](https://user-images.githubusercontent.com/110735452/226966056-32c5956a-5440-4025-a780-a1669e6c838f.png)
+ ![MySQL_02 04 23](https://user-images.githubusercontent.com/110735452/229337452-fc29549a-6f62-4534-8a43-37d051da929d.png)
+ ![MySQL_02 04 23_2](https://user-images.githubusercontent.com/110735452/229337464-88d80c04-1880-4e86-ab92-12bd7186ec1a.png)
+
+ 
 
 **MySQL:**
  - успешных - 32 (84,21%)
  - неуспешных - 6 (15,79%)
   
-![Allure MySQL](https://user-images.githubusercontent.com/110735452/226966236-65db1453-b8fc-49d6-9f9c-0ee0a298f2e9.png)
+![MySQL_02 04 23](https://user-images.githubusercontent.com/110735452/229337474-95931463-7335-4adb-b802-2800559d3d87.png)
+![MySQL_02 04 23_2](https://user-images.githubusercontent.com/110735452/229337479-8a90d4d4-1540-4e0b-a8f7-417c79752ae9.png)
 
-![Allure  MySQL](https://user-images.githubusercontent.com/110735452/226966265-431e837a-0dba-421c-a9d4-69ed349d14dd.png)
+
   
 ## Дефекты, обнаруженные во время тестирования
 
