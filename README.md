@@ -31,3 +31,9 @@ http://localhost:8080/
 По команде в термнале IDE: docker-compose down
 
 ## Документация:
+- [План 
+автоматизации](https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/FixError/docs/Plan.md)
+- [Отчет по итогам 
+тестирования](https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/FixError/docs/Report.md)
+- [Отчет по итогам 
+автоматизации](https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/FixError/docs/Summary.md)
