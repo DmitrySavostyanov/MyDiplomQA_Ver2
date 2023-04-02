@@ -37,3 +37,10 @@ http://localhost:8080/
 тестирования](https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/FixError/docs/Report.md)
 - [Отчет по итогам 
 автоматизации](https://github.com/DmitrySavostyanov/MyDiplomQA_Ver2/blob/FixError/docs/Summary.md)
+
+## Демонстрация 
+
+[Видео демонстрация запуска тестов](https://user-images.githubusercontent.com/110735452/229338586-310a4171-09cb-4350-9421-be827df0a1c0.mp4)
+
+
+
